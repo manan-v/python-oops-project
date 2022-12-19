@@ -43,16 +43,17 @@ class Login:
 
 
 class store:
-      def __init__(self) -> None:
-          # self.medic=""
-          # self.price=""
-          self.data2={
+      data2={
             "paracetamol": [40,119],
             "vomikind": [30,112],
             "combiflime":[70,67],
             "l-dio1":[47,87],
-            "avil": [45,34]
-        }
+            "avil": [45,34]}
+      def __init__(self) -> None:
+          # self.medic=""
+          # self.price=""
+          
+        
           self.menu2()
 
       def menu2(self):
@@ -75,24 +76,24 @@ class store:
       #         print("{}  {}  {}".format(i,self.data2[i][0],self.data2[i][12]))
       def view(self):
             print("Medicine     item available        price")
-            for it in self.data2:
+            for it in store.data2:
                   
             # print(it+" "+self.data[it][0]," ",self.data[it][1])
-                    print("{}  {}   {}".format(it,self.data2[it][0],self.data2[it][1]))
+                    print("{}  {}   {}".format(it,store.data2[it][0],store.data2[it][1]))
             # print(self.data[it][0])
       def selling(self):
             medic= input("Enter the name of the medicine:")
 
-            if(medic in self.data2):
+            if(medic in store.data2):
                   item = int(input("Enter no. of items for "+medic))
-                  if(self.data2[medic][0]<item):
-                        print("Sorry we have only " + str(self.data2[medic][0]) + "items available for " + medic)
+                  if(store.data2[medic][0]<item):
+                        print("Sorry we have only " + str(store.data2[medic][0]) + "items available for " + medic)
                         print("selling the available items anyway")
-                        print("The Bill for" + str(self.data2[medic][0]) + "items is" + str(self.data2[medic][0]*self.data2[medic][1]))
-                        self.data2[medic][0]=0
+                        print("The Bill for" + str(store.data2[medic][0]) + "items is" + str(store.data2[medic][0]*store.data2[medic][1]))
+                        store.data2[medic][0]=0
                   else:
-                        print("The Bill for" + str(self.data2[medic][0]) + "items is" + str(self.data2[medic][0]*self.data2[medic][1]))
-                        self.data2[medic][0]-= item
+                        print("The Bill for" + str(store.data2[medic][0]) + "items is" + str(store.data2[medic][0]*store.data2[medic][1]))
+                        store.data2[medic][0]-= item
             else:
                 print("Sorry"+ medic + "is not available") 
 
